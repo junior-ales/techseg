@@ -5,7 +5,7 @@
   "authors": [
     "Junior Ales <edilson.ales.jr@gmail.com>"
   ],
-  "license": "MIT",
+  "license": "BSD-2-Clause",
   "ignore": [
     "**/.*",
     "node_modules",
