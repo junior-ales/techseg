@@ -1,0 +1,19 @@
+{
+  "name": "techseg",
+  "version": "0.0.0",
+  "homepage": "https://github.com/junior-ales/techseg",
+  "authors": [
+    "Junior Ales <edilson.ales.jr@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation": "~5.0.2"
+  }
+}
