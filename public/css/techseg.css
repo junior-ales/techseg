@@ -1,12 +1,40 @@
-body {
-  background-color: rgba(240,240,216,1);
-}
-
 header.main {
   background-color: rgba(255,255,255,1);
 }
 
-h3 {
+section.inicio {
+  background-color: rgba(63,181,106,1);
+}
+
+section.inicio,
+section.inicio h1 {
+  color: rgba(5,59,24,1);
+}
+
+section.servicos {
+  background-color: rgba(224, 255, 236, 1);
+}
+
+section.servicos,
+section.servicos h1,
+section.servicos h2 {
+  color: rgba(5,59,24,1);
+}
+
+.barra-nav,
+section.contato {
+  background-color: rgba(5,59,24,1);
+}
+
+section.inicio,
+section.servicos,
+section.contato {
+  padding-bottom: 30px;
+}
+
+h1.subtitulo {
+  padding-top: 40px;
+  padding-bottom: 20px;
   margin-left: 15px;
 }
 
@@ -14,4 +42,17 @@ img.center {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+div.info-empresa {
+  background-color: rgba(5,59,24,1);
+  padding: 15px;
+}
+
+div.info-empresa,
+div.info-empresa h2,
+section.contato,
+section.contato h1,
+section.contato label {
+  color: rgba(224, 255, 236, 1);
 }
