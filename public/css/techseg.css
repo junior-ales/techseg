@@ -56,3 +56,21 @@ section.contato h1,
 section.contato label {
   color: rgba(224, 255, 236, 1);
 }
+
+.sub-nav dd a.main-link {
+  font-size: 1.5em;
+  color: rgba(224, 255, 236, 1);
+}
+
+.sub-nav dd a.main-link:hover {
+  color: rgba(63,181,106,1);
+}
+
+.sub-nav dd.active a.main-link {
+  background-color: rgba(63,181,106,1);
+  color: rgba(0,0,0,1);
+}
+
+[data-magellan-expedition] .sub-nav .active {
+  line-height: inherit;
+}
