@@ -16,6 +16,10 @@
     "ejs": "~0.8.5",
     "logfmt": "*"
   },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-watch": "~0.4.4"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/junior-ales/techseg.git"
