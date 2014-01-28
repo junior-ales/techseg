@@ -2,7 +2,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     watch: {
-      files: ['views/**/*.html', 'public/css/**/*.css'],
+      files: ['views/**/*.html', 'public/css/**/*.css', 'public/js/**/*.js'],
       tasks: ['reload']
     }
   });
@@ -16,4 +16,6 @@ module.exports = function(grunt) {
         "-e 'reload' " +
         "-e 'end tell'");
   });
+
+  grunt.registerTask('default', ['watch']);
 };
