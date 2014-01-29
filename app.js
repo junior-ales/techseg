@@ -16,11 +16,12 @@ var app = function () {
     var mandrillData = {
       'key': app.get('MANDRILL_KEY'),
       'message': req.body.message
-    };
+    }
 
     request.post('https://mandrillapp.com/api/1.0/messages/send.json', 
       { body: JSON.stringify(mandrillData) },
       function (error, response, body) {
+        if(!response) { res.json(500, error); }
         res.json(response.statusCode, body);
       }
     );

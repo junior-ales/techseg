@@ -3,20 +3,23 @@ $(document).ready(function() {
   $('#enviar-email').on('click', function(event) {
     event.preventDefault();
 
+    var remetente = $('#email-remetente').val();
+    var texto = $('#email-texto').val();
+
     $.ajax({
       type: 'POST',
       url: '/email',
       data: {
         'message': {
-          'from_email': '',
+          'from_email': remetente,
           'to': [{
-            'email': '',
+            'email': 'raphaelgarciaramos@hotmail.com',
             'name': 'Cliente TechSeg',
             'type': 'to'
           }],
           'autotext': 'true',
           'subject': 'Contato Pelo Site',
-          'html': ''
+          'html': texto
         }
       },
       timeout: 30000
