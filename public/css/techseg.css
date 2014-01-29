@@ -1,3 +1,5 @@
+@import url("responsive.css");
+
 @font-face {
   font-family: "Alef";
   src: url("/fonts/Alef/Alef-Regular.ttf");
@@ -14,10 +16,6 @@ header.main {
 
 section.inicio {
   background-color: rgba(63,181,106,1);
-}
-
-section.inicio p {
-  font-size: 25px;
 }
 
 section.inicio img,
@@ -70,7 +68,6 @@ img.center {
 div.info-empresa {
   background-color: rgba(5,59,24,1);
   padding: 15px;
-  min-height: 315px;
   margin-bottom: 15px;
 }
 
