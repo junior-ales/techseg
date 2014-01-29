@@ -11,6 +11,16 @@
     <script src="foundation/js/vendor/modernizr.js"></script>
   </head>
   <body>
+    <section id="msg-email-container">
+      <div id="msg-email-success" data-alert class="alert-box success">
+        Obrigado por contactar a TechSeg, seu email foi enviado com sucesso
+        <a href="#" class="close">&times;</a>
+      </div>
+      <div id="msg-email-error" data-alert class="alert-box alert">
+        Ocorreu um erro no envio do email. Por favor, tente mais tarde
+        <a href="#" class="close">&times;</a>
+      </div>
+    </section>
     <header class="small-12 columns main">
       <img src="img/logo.png" class="center" alt="" />
     </header>
@@ -100,22 +110,27 @@
       <section class="row">
         <a class="ancora" name="contato"></a>
         <h1 class="subtitulo" data-magellan-destination="contato">Contato</h1>
-        <section class="small-12 medium-7 large-7 columns">
+        <form data-abide class="small-12 medium-7 large-7 columns">
           <header><p>Descubra o que a TechSeg pode fazer pela sua empresa</p></header>
           <div class="row">
-            <div class="small-12 columns">
+            <div class="email-field small-12 columns">
               <label>Email</label>
-              <input id="email-remetente" type="email" placeholder="exemplo@email.com" />
+              <input id="email-remetente" type="email" class="form-elem" placeholder="exemplo@email.com" required />
+              <small class="error">Endereço de email é obrigatório</small>
             </div>
           </div>
           <div class="row">
-            <div class="small-12 columns">
+            <div class="text-field small-12 columns">
               <label>Texto</label>
-              <textarea id="email-texto" type="text"></textarea>
-              <button class="enviar-email button expand">Enviar</button>
+              <textarea id="email-texto" type="text" class="form-elem" required></textarea>
+              <small class="error">Adicione conteúdo ao seu email</small>
+              <button id="enviar-email" class="form-elem button expand">
+                <img id="loading-spin" src="img/spin.gif" alt="Carregando..." />
+                <span>Enviar</span>
+              </button>
             </div>
           </div>
-        </section>
+        </form>
         <footer class="small-12 medium-5 large-5 columns">
           <img src="img/logo.png" class="center" alt="" />
           <p class="text-center">Techseg Consultoria em Meio Ambiente e Segurança do Trabalho</p>
@@ -126,6 +141,7 @@
 
     <script src="foundation/js/vendor/jquery.js"></script>
     <script src="foundation/js/foundation.js"></script>
+    <script src="foundation/js/foundation/foundation.abide.js"></script>
     <script src="foundation/js/foundation/foundation.magellan.js"></script>
     <script src="js/techseg.js"></script>
     <script>
