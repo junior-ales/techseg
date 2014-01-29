@@ -59,7 +59,8 @@ h1.subtitulo {
   margin-left: 15px;
 }
 
-img.center {
+img.center,
+#fb-plugin {
   display: block;
   margin-left: auto;
   margin-right: auto;
