@@ -5,26 +5,26 @@ $(document).ready(function() {
 
     $.ajax({
       type: 'POST',
-      url: 'https://mandrillapp.com/api/1.0/messages/send.json',
+      url: '/email',
       data: {
-        'key': '',
         'message': {
           'from_email': '',
           'to': [{
             'email': '',
-            'name': '',
+            'name': 'Cliente TechSeg',
             'type': 'to'
           }],
           'autotext': 'true',
-          'subject': '',
+          'subject': 'Contato Pelo Site',
           'html': ''
         }
       },
-      timeout: 15000
+      timeout: 30000
     }).success(function(response) {
       $('.alert-box').hide();
       $('#msg-email-success').show();
     }).error(function(response) {
+      console.log(response);
       $('.alert-box').hide();
       $('#msg-email-error').show();
     }).complete(function(response) {

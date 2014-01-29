@@ -3,6 +3,13 @@
 
 ### Desenvolvimento
 
+- Adicione um arquivo chamado `localConfig.js` na raiz do projeto com o seguinte conteudo:
+`
+var config = {}
+config.mandrillKey = '[AQUI_VAI_A_API_KEY_DO_MANDRILL]';
+module.exports = config;
+`
+
 - `$ node start.js` para rodar localmente a aplicação;
 
 GruntJS Taks para auto reload do Chrome: 
@@ -16,5 +23,6 @@ GruntJS Taks para auto reload do Chrome:
 - Bower 1.2.8; 
 - Foundation 5;
 - GruntJS;
+- Mandrill Email App;
 - Codeship.io;
 - Heroku;

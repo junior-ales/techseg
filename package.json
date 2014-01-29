@@ -14,7 +14,8 @@
     "express": "~3.4.7",
     "zombie": "*",
     "ejs": "~0.8.5",
-    "logfmt": "*"
+    "logfmt": "*",
+    "request": "2.33.0"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
