@@ -3,6 +3,7 @@ $(document).ready(function() {
   $('#enviar-email').on('click', function(event) {
     event.preventDefault();
 
+    if ($('#message').val()) { return; }
     var remetente = $('#email-remetente').val();
     var texto = $('#email-texto').val();
 
