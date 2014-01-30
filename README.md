@@ -1,4 +1,5 @@
-[ ![Codeship Status for junior-ales/techseg](https://www.codeship.io/projects/c20b5df0-66cd-0131-7b0a-7ac0e27144fd/status?branch=master)](https://www.codeship.io/projects/12637)
+[![Build Status](https://snap-ci.com/zfisnXmvZlzbdaD1FRigWBmxWPzS-MXZwtcnU2UZDI0/build_image)](https://snap-ci.com/projects/junior-ales/techseg/build_history)
+
 # Site da Tech Seg Consultoria
 
 ### Desenvolvimento
@@ -23,5 +24,5 @@ GruntJS Taks para auto reload do Chrome:
 - Foundation 5;
 - GruntJS;
 - Mandrill Email App;
-- Codeship.io;
+- Snap-CI;
 - Heroku;
