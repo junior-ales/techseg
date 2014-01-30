@@ -4,11 +4,10 @@
 ### Desenvolvimento
 
 - Adicione um arquivo chamado `localConfig.js` na raiz do projeto com o seguinte conteudo:
-`
-var config = {}
-config.mandrillKey = '[AQUI_VAI_A_API_KEY_DO_MANDRILL]';
-module.exports = config;
-`
+
+    var config = {}
+    config.mandrillKey = '[AQUI_VAI_A_API_KEY_DO_MANDRILL]';
+    module.exports = config;
 
 - `$ node start.js` para rodar localmente a aplicação;
 
