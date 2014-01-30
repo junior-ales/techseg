@@ -13,10 +13,10 @@ var app = function () {
     res.render('index.html');
   });
   app.post('/email', function(req, res) {
-    var mandrillData = {
-      'key': app.get('MANDRILL_KEY'),
-      'message': req.body.message
-    }
+    var mandrillData = {}
+    mandrillData.key = app.get('MANDRILL_KEY');
+    mandrillData.message = req.body.message;
+    mandrillData.message.to[0].email = app.get('EMAIL_RECEIVER');
 
     request.post('https://mandrillapp.com/api/1.0/messages/send.json', 
       { body: JSON.stringify(mandrillData) },

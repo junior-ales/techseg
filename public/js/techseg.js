@@ -14,7 +14,6 @@ $(document).ready(function() {
         'message': {
           'from_email': remetente,
           'to': [{
-            'email': 'raphaelgarciaramos@hotmail.com',
             'name': 'Cliente TechSeg',
             'type': 'to'
           }],
