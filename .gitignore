@@ -4,3 +4,6 @@ bower_components/
 *.swp
 .DS_Store
 localConfig.js
+
+# public/css e seus arquivos serão gerados pelo Sass
+public/css

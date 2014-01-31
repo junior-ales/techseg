@@ -4,7 +4,7 @@ module.exports = function(grunt) {
     watch: {
       files: [
         'views/**/*.html',
-        'public/css/**/*.css',
+        'sass/**/*.scss',
         'public/js/**/*.js'
       ],
       tasks: ['reload']
