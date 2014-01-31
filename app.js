@@ -5,8 +5,13 @@ var app = function () {
   var logfmt = require("logfmt");
   var app = express();
 
-  app.set('views', __dirname + '/views');
   app.engine('html', require('ejs').renderFile);
+
+  app.set('views', __dirname + '/views');
+  app.use(express.static(__dirname + '/public'));
+  app.use(express.static(__dirname + '/bower_components'));
+
+  app.use(logfmt.requestLogger());
 
   app.use(express.bodyParser());
   app.get('/', function(req, res) {
@@ -26,12 +31,6 @@ var app = function () {
       }
     );
   });
-
-  app.configure(function() {
-    app.use(express.static(__dirname + '/public'));
-    app.use(express.static(__dirname + '/bower_components'));
-    app.use(logfmt.requestLogger());
-  })
 
   return app;
 }();
