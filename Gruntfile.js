@@ -2,7 +2,11 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     watch: {
-      files: ['views/**/*.html', 'public/css/**/*.css', 'public/js/**/*.js'],
+      files: [
+        'views/**/*.html',
+        'public/css/**/*.css',
+        'public/js/**/*.js'
+      ],
       tasks: ['reload']
     }
   });

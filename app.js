@@ -2,10 +2,20 @@ var app = function () {
   var http = require('http');
   var request = require('request');
   var express = require('express');
+  var sass = require('node-sass');
   var logfmt = require("logfmt");
   var app = express();
 
   app.engine('html', require('ejs').renderFile);
+
+  var sassConfig = {
+    src: __dirname + '/sass',
+    dest: __dirname + '/public',
+    debug: true,
+    outputStyle: 'compressed',
+    imagePath: __dirname + '/public/img'
+  }
+  app.use(sass.middleware(sassConfig));
 
   app.set('views', __dirname + '/views');
   app.use(express.static(__dirname + '/public'));
