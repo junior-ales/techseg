@@ -1,5 +1,9 @@
 @import 'responsive';
 
+$primary-color: rgba(5,59,24,1);
+$secondary-color: rgba(224, 255, 236, 1);
+$tertiary-color: rgba(63,181,106,1);
+
 @font-face {
   font-family: 'Alef';
   src: url('/fonts/Alef/Alef-Regular.ttf');
@@ -10,11 +14,11 @@ body, h1, h2, a {
   font-weight: 400;
 }
 
-header.main { background-color: rgba(255,255,255,1); }
+header.main { background-color: white; }
 
 section.inicio {
-  color: rgba(5,59,24,1);
-  background-color: rgba(63,181,106,1);
+  color: $primary-color;
+  background-color: $tertiary-color;
   padding-bottom: 30px;
 
   h1 { color: inherit; }
@@ -22,8 +26,8 @@ section.inicio {
 }
 
 section.servicos {
-  color: rgba(5,59,24,1);
-  background-color: rgba(224, 255, 236, 1);
+  color: $primary-color;
+  background-color: $secondary-color;
   padding-bottom: 30px;
 
   h1, h2 { color: inherit; }
@@ -31,13 +35,13 @@ section.servicos {
 }
 
 .barra-nav {
-  background-color: rgba(5,59,24,1);
+  background-color: $primary-color;
 }
 
 section.contato {
-  background-color: rgba(5,59,24,1);
+  background-color: $primary-color;
   padding-bottom: 30px;
-  color: rgba(224, 255, 236, 1);
+  color: $secondary-color;
 
   h1, label { color: inherit; }
 }
@@ -56,10 +60,10 @@ img.center,
 }
 
 div.info-empresa {
-  background-color: rgba(5,59,24,1);
+  background-color: $primary-color;
   padding: 15px;
   margin-bottom: 15px;
-  color: rgba(224, 255, 236, 1);
+  color: $secondary-color;
 
   h2 { color: inherit; }
   p { font-size: 14px; }
@@ -68,33 +72,33 @@ div.info-empresa {
 dd.main-link {
   a {
     font-size: 1.5em;
-    color: rgba(224, 255, 236, 1);
+    color: $secondary-color;
 
-    &:hover { color: rgba(63,181,106,1); }
+    &:hover { color: $tertiary-color; }
   }
   &.active {
     line-height: inherit !important;
 
     a, a:hover {
-      background-color: rgba(63,181,106,1);
-      color: rgba(0,0,0,1);
+      background-color: $tertiary-color;
+      color: black;
     }
   }
 }
 
 #enviar-email[disabled]:hover {
-  background-color: rgba(63,181,106,1);
-  color: rgba(0,0,0,1);
+  background-color: $tertiary-color;
+  color: black;
 }
 
 #enviar-email {
   margin-bottom: 50px;
-  background-color: rgba(63,181,106,1);
-  color: rgba(0,0,0,1);
+  background-color: $tertiary-color;
+  color: black;
 
   &:focus, &:hover {
     background-color: rgba(63,181,106,0.5);
-    color: rgba(224, 255, 236, 1);
+    color: $secondary-color;
   }
 }
 
@@ -102,7 +106,7 @@ footer  {
   img { margin-bottom: 30px; }
   p.dev {
     font-size: 12px;
-    a { color: rgba(63,181,106,1); }
+    a { color: $tertiary-color; }
     a:hover { opacity: 0.5; }
   }
 }
