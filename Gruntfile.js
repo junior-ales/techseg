@@ -1,17 +1,30 @@
 module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    clean: [__dirname + '/public/css/tmp'],
     watch: {
       files: [
         'views/**/*.html',
         'sass/**/*.scss',
         'public/js/**/*.js'
       ],
-      tasks: ['reload']
+      tasks: ['sass', 'clean', 'reload']
+    },
+    sass: {
+      dist: {
+        options: {
+          style: 'expanded'
+        },
+        files: {
+          'public/css/tmp/techseg.css': __dirname + '/sass/css/techseg.scss'
+        }
+      }
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-contrib-clean');
 
   grunt.registerTask("reload", "reload Chrome on OS X", function() {
     require("child_process").exec("osascript " +

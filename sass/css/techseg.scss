@@ -4,6 +4,23 @@ $primary-color: rgba(5,59,24,1);
 $secondary-color: rgba(224, 255, 236, 1);
 $tertiary-color: rgba(63,181,106,1);
 
+@mixin elem-colors($bg-color: $tertiary-color, $font-color: $secondary-color) {
+  background-color: $bg-color;
+  color: $font-color;
+}
+
+@mixin section($bg-color: $tertiary-color, $font-color: $secondary-color) {
+  @include elem-colors($bg-color, $font-color);
+  padding-bottom: 30px;
+  h1 { color: inherit; }
+}
+
+@mixin block-centered {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 @font-face {
   font-family: 'Alef';
   src: url('/fonts/Alef/Alef-Regular.ttf');
@@ -17,33 +34,23 @@ body, h1, h2, a {
 header.main { background-color: white; }
 
 section.inicio {
-  color: $primary-color;
-  background-color: $tertiary-color;
-  padding-bottom: 30px;
-
-  h1 { color: inherit; }
+  @include section($font-color: $primary-color);
   img, p.main-text { margin-bottom: 50px; }
 }
 
 section.servicos {
-  color: $primary-color;
-  background-color: $secondary-color;
-  padding-bottom: 30px;
-
-  h1, h2 { color: inherit; }
+  @include section($bg-color: $secondary-color, $font-color: $primary-color);
+  h2 { color: inherit; }
   img { margin-top: 30px; }
+}
+
+section.contato {
+  @include section($bg-color: $primary-color);
+  label { color: inherit; }
 }
 
 .barra-nav {
   background-color: $primary-color;
-}
-
-section.contato {
-  background-color: $primary-color;
-  padding-bottom: 30px;
-  color: $secondary-color;
-
-  h1, label { color: inherit; }
 }
 
 h1.subtitulo {
@@ -54,16 +61,13 @@ h1.subtitulo {
 
 img.center,
 #fb-plugin {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  @include block-centered;
 }
 
 div.info-empresa {
-  background-color: $primary-color;
+  @include elem-colors($bg-color: $primary-color);
   padding: 15px;
   margin-bottom: 15px;
-  color: $secondary-color;
 
   h2 { color: inherit; }
   p { font-size: 14px; }
@@ -80,35 +84,29 @@ dd.main-link {
     line-height: inherit !important;
 
     a, a:hover {
-      background-color: $tertiary-color;
-      color: black;
+      @include elem-colors($font-color: black);
     }
   }
 }
 
-#enviar-email[disabled]:hover {
-  background-color: $tertiary-color;
-  color: black;
-}
+#enviar-email[disabled]:hover { @include elem-colors($font-color: black); }
 
 #enviar-email {
+  @include elem-colors($font-color: black);
   margin-bottom: 50px;
-  background-color: $tertiary-color;
-  color: black;
 
   &:focus, &:hover {
-    background-color: rgba(63,181,106,0.5);
-    color: $secondary-color;
+    @include elem-colors($bg-color: rgba(63,181,106,0.5));
   }
 }
 
-footer  {
-  img { margin-bottom: 30px; }
-  p.dev {
-    font-size: 12px;
-    a { color: $tertiary-color; }
-    a:hover { opacity: 0.5; }
-  }
+footer img { margin-bottom: 30px; }
+
+p.dev {
+  font-size: 12px;
+
+  a { color: $tertiary-color; }
+  a:hover { opacity: 0.5; }
 }
 
 #email-texto { min-height: 100px; }
@@ -121,9 +119,8 @@ footer  {
   width: 100%;
 
   .alert-box {
+    @include block-centered;
     width: 80%;
-    margin-left: auto;
-    margin-right: auto;
   }
 }
 
