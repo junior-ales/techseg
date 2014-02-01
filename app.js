@@ -11,7 +11,6 @@ var app = function () {
   var sassConfig = {
     src: __dirname + '/sass',
     dest: __dirname + '/public',
-    debug: true,
     outputStyle: 'compressed',
     imagePath: __dirname + '/public/img'
   }

@@ -1,8 +1,8 @@
-@import url("responsive.css");
+@import 'responsive';
 
 @font-face {
-  font-family: "Alef";
-  src: url("/fonts/Alef/Alef-Regular.ttf");
+  font-family: 'Alef';
+  src: url('/fonts/Alef/Alef-Regular.ttf');
 }
 
 body, h1, h2, a {
@@ -12,37 +12,34 @@ body, h1, h2, a {
 
 header.main { background-color: rgba(255,255,255,1); }
 
-section.inicio { background-color: rgba(63,181,106,1); }
-
-section.inicio img,
-section.inicio p.main-text {
-  margin-bottom: 50px;
-}
-
-section.inicio,
-section.inicio h1 {
+section.inicio {
   color: rgba(5,59,24,1);
+  background-color: rgba(63,181,106,1);
+  padding-bottom: 30px;
+
+  h1 { color: inherit; }
+  img, p.main-text { margin-bottom: 50px; }
 }
 
-section.servicos { background-color: rgba(224, 255, 236, 1); }
-
-section.servicos,
-section.servicos h1,
-section.servicos h2 {
+section.servicos {
   color: rgba(5,59,24,1);
+  background-color: rgba(224, 255, 236, 1);
+  padding-bottom: 30px;
+
+  h1, h2 { color: inherit; }
+  img { margin-top: 30px; }
 }
 
-section.servicos img { margin-top: 30px; }
-
-.barra-nav,
-section.contato {
+.barra-nav {
   background-color: rgba(5,59,24,1);
 }
 
-section.inicio,
-section.servicos,
 section.contato {
+  background-color: rgba(5,59,24,1);
   padding-bottom: 30px;
+  color: rgba(224, 255, 236, 1);
+
+  h1, label { color: inherit; }
 }
 
 h1.subtitulo {
@@ -62,57 +59,55 @@ div.info-empresa {
   background-color: rgba(5,59,24,1);
   padding: 15px;
   margin-bottom: 15px;
-}
-
-div.info-empresa p { font-size: 14px; }
-
-div.info-empresa,
-div.info-empresa h2,
-section.contato,
-section.contato h1,
-section.contato label {
   color: rgba(224, 255, 236, 1);
+
+  h2 { color: inherit; }
+  p { font-size: 14px; }
 }
 
-.sub-nav dd a.main-link {
-  font-size: 1.5em;
-  color: rgba(224, 255, 236, 1);
+dd.main-link {
+  a {
+    font-size: 1.5em;
+    color: rgba(224, 255, 236, 1);
+
+    &:hover { color: rgba(63,181,106,1); }
+  }
+  &.active {
+    line-height: inherit !important;
+
+    a, a:hover {
+      background-color: rgba(63,181,106,1);
+      color: rgba(0,0,0,1);
+    }
+  }
 }
 
-.sub-nav dd a.main-link:hover { color: rgba(63,181,106,1); }
-
-#enviar-email,
-#enviar-email[disabled]:hover,
-.sub-nav dd.active a.main-link {
+#enviar-email[disabled]:hover {
   background-color: rgba(63,181,106,1);
   color: rgba(0,0,0,1);
 }
 
-#enviar-email:focus,
-#enviar-email:hover {
-  background-color: rgba(63,181,106,0.5);
-  color: rgba(224, 255, 236, 1);
+#enviar-email {
+  margin-bottom: 50px;
+  background-color: rgba(63,181,106,1);
+  color: rgba(0,0,0,1);
+
+  &:focus, &:hover {
+    background-color: rgba(63,181,106,0.5);
+    color: rgba(224, 255, 236, 1);
+  }
 }
 
-#enviar-email { margin-bottom: 50px; }
-
-footer img { margin-bottom: 30px; }
-
-footer p.dev { font-size: 12px; }
-
-footer p.dev a { color: rgba(63,181,106,1); }
-
-footer p.dev a:hover { color: rgba(63,181,106,0.5); }
-
-[data-magellan-expedition] .sub-nav .active { line-height: inherit; }
+footer  {
+  img { margin-bottom: 30px; }
+  p.dev {
+    font-size: 12px;
+    a { color: rgba(63,181,106,1); }
+    a:hover { opacity: 0.5; }
+  }
+}
 
 #email-texto { min-height: 100px; }
-
-#msg-email-container .alert-box {
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-}
 
 #msg-email-container {
   display: none;
@@ -120,6 +115,12 @@ footer p.dev a:hover { color: rgba(63,181,106,0.5); }
   top: 60px;
   z-index: 1;
   width: 100%;
+
+  .alert-box {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 #loading-spin {
