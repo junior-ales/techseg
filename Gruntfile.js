@@ -1,7 +1,9 @@
 module.exports = function(grunt) {
+  var path = require('path');
+
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    clean: [__dirname + '/public/css/tmp'],
+    clean: [path.join(__dirname,'public','css','tmp')],
     watch: {
       files: [
         'views/**/*.html',
@@ -16,7 +18,7 @@ module.exports = function(grunt) {
           style: 'expanded'
         },
         files: {
-          'public/css/tmp/techseg.css': __dirname + '/sass/css/techseg.scss'
+          'public/css/tmp/techseg.css': path.join(__dirname,'sass','css','techseg.scss')
         }
       }
     }
