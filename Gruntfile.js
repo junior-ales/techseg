@@ -5,21 +5,28 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     clean: [path.join(__dirname,'public','css','tmp')],
     watch: {
-      files: [
-        'views/**/*.html',
-        'sass/**/*.scss',
-        'public/js/**/*.js'
-      ],
-      tasks: ['sass', 'clean', 'reload']
+      files: [ 'views/**/*.html', 'sass/**/*.scss', 'public/js/**/*.js', './*.js' ],
+      tasks: ['jshint', 'sass', 'clean', 'reload'],
+      express: {
+        files:  [ 'public/js/**/*.js', './*.js' ],
+        tasks:  [ 'express' ],
+        options: { spawn: false }
+      }
     },
     sass: {
       dist: {
-        options: {
-          style: 'expanded'
-        },
+        options: { style: 'expanded' },
         files: {
           'public/css/tmp/techseg.css': path.join(__dirname,'sass','css','techseg.scss')
         }
+      }
+    },
+    jshint: {
+      all: ['./*.js', 'public/**/*.js']
+    },
+    express: {
+      dev: {
+        options: { script: './start.js' }
       }
     }
   });
@@ -27,6 +34,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-express-server');
 
   grunt.registerTask("reload", "reload Chrome on OS X", function() {
     require("child_process").exec("osascript " +
@@ -36,5 +45,5 @@ module.exports = function(grunt) {
         "-e 'end tell'");
   });
 
-  grunt.registerTask('default', ['watch']);
+  grunt.registerTask('default', ['jshint', 'sass', 'clean', 'express', 'watch']);
 };

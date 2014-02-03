@@ -14,7 +14,7 @@ var app = function () {
     dest: path.join(__dirname, 'public'),
     outputStyle: 'compressed',
     imagePath: path.join(__dirname, 'public', 'img'),
-  }
+  };
   app.use(sass.middleware(sassConfig));
 
   app.set('views', path.join(__dirname, 'views'));
@@ -28,7 +28,7 @@ var app = function () {
     res.render('index.html');
   });
   app.post('/email', function(req, res) {
-    var mandrillData = {}
+    var mandrillData = {};
     mandrillData.key = app.get('MANDRILL_KEY');
     mandrillData.message = req.body.message;
     mandrillData.message.to[0].email = app.get('EMAIL_RECEIVER');
