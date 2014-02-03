@@ -15,7 +15,7 @@ $tertiary-color: rgba(63,181,106,1);
   h1 { color: inherit; }
 }
 
-@mixin block-centered {
+%block-centered {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -57,7 +57,7 @@ h1.subtitulo {
   margin-left: 15px;
 }
 
-img.center, #fb-plugin { @include block-centered; }
+img.center, #fb-plugin { @extend %block-centered; }
 
 div.info-empresa {
   @include elem-colors($bg-color: $primary-color);
@@ -113,7 +113,7 @@ p.dev {
   width: 100%;
 
   .alert-box {
-    @include block-centered;
+    @extend %block-centered;
     width: 80%;
   }
 }
