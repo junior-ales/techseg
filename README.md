@@ -1,4 +1,4 @@
-[![Build Status](https://snap-ci.com/zfisnXmvZlzbdaD1FRigWBmxWPzS-MXZwtcnU2UZDI0/build_image)](https://snap-ci.com/projects/junior-ales/techseg/build_history)
+[![Build Status](https://snap-ci.com/ojPJB-tgjJdBXLGE8I4BUobDQBQLhCdwGb20-116YV4/build_image)](https://snap-ci.com/projects/junior-ales/techseg/build_history)
 
 # Site da Tech Seg Consultoria
 
