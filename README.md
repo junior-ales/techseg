@@ -4,7 +4,7 @@
 
 ### Desenvolvimento
 
-- Adicione um arquivo chamado `localConfig.js` na raiz do projeto com o seguinte conteudo:
+- Adicione um arquivo chamado `localConfig.js` na raiz do projeto com o seguinte conteúdo:
 
 <pre>
   <code>
